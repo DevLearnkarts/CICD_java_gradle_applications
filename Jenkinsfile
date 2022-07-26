@@ -38,6 +38,7 @@ pipeline{
                              docker push 34.125.75.116:8083/springapp:${VERSION} .
                              docker rmi 34.125.75.116:8083/springapp:${VERSION} .
                     }
+                    
                 }
             }
         }             
