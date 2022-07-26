@@ -22,11 +22,10 @@ pipeline{
                       if (qg.status != 'OK') {
                            error "Pipeline aborted due to quality gate failure: ${qg.status}"
                       }
-                    }            
-                }
-                 
-            }
+                    } 
 
+                }                
+            }
         }
         stage("docker build & docker push"){
             steps{
@@ -37,8 +36,9 @@ pipeline{
                              docker login -u admin -p $docker_password 34.125.75.116:8083
                              docker push 34.125.75.116:8083/springapp:${VERSION} .
                              docker rmi 34.125.75.116:8083/springapp:${VERSION} .
+                             ''' 
                     }
-                    
+
                 }
             }
         }             
