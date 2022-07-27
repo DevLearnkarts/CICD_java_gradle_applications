@@ -21,10 +21,6 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-tasks.named("bootWar") {
-	classpath configurations.developmentOnly
-}
-
 test {
 	useJUnitPlatform()
 }
