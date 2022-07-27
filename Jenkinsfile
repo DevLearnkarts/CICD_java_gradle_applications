@@ -17,9 +17,6 @@ pipeline{
                             sh './gradlew sonarqube'
                     }
                    
-                springBoot {
-                mainClass.value("com.mycompany.MyApplication")
-                }
                      timeout(time: 1, unit: 'HOURS') {
                       def qg = waitForQualityGate()
                       if (qg.status != 'OK') {
