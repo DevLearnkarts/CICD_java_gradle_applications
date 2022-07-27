@@ -4,7 +4,7 @@ pipeline{
         VERSION = "${env.BUILD_ID}"
     }
     stages{
-        // stage(" sonar quality check"){
+        stage(" sonar quality check"){
         //     agent{
         //         docker{
         //             image 'openjdk:11'
@@ -16,6 +16,7 @@ pipeline{
                             sh 'chmod +x gradlew'
                             sh './gradlew sonarqube'
                     }
+                   
                 springBoot {
                 mainClass.value("com.mycompany.MyApplication")
                 }
@@ -44,5 +45,5 @@ pipeline{
                 }
             }
         }             
-    
+    }
 }
