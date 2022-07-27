@@ -21,6 +21,14 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart',
+                   'Implementation-Version': version,
+                   'Main-Class': 'hello.helloWorld'
+    }
+}
+
 test {
 	useJUnitPlatform()
 }
