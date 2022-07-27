@@ -22,9 +22,11 @@ dependencies {
 }
 
 jar {
-    manifest {
-        attributes 'Main-Class': 'HomeController'
-    }
+   enabled : true
+}
+
+bootJar{
+	enabled : false
 }
 
 test {
